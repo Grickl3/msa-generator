@@ -3,3 +3,11 @@
 * {
 	font-family: 'Prompt', Helvetica, sans-serif;
 }
+
+h2 {
+	font-weight: 500;
+}
+
+p {
+	font-weight: 200;
+}
