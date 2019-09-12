@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>MSA Generator</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="styles/brand.css">
+	<link rel="stylesheet" type="text/css" href="styles/ui.css">
+	<link rel="stylesheet" type="text/css" href="styles/layout.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Prompt:200,200i,500,500i,900,900i&display=swap" rel="stylesheet">
+
+	<script type="text/javascript" src="scripts/msa.js"></script>
+</head>
+<body>
+
+	<h1>Hey, World, you ready to build some motherfucking MSAs?</h1>
+
+	<div class="layout__builder-box">
+		<div class="layout__builder-section">
+			<select id="provider" class="ui__field">
+				<option value="Coevolve">Coevolve</option>
+				<option value="SQGLZ">SQGLZ</option>
+			</select>
+			<select id="provider-address" class="ui__field">
+				<option value="409 Baker St. Longmont, CO 80501">Longmont</option>
+				<option value="78 S. Newton St. Denver, CO 80219">Denver</option>
+			</select>
+
+			<input id="client" class="ui__field" type="text" name="client" placeholder="client firm">
+			<input id="client-address" class="ui__field" type="text" name="client-address" placeholder="client address">
+			<br>
+			<input id="date" class="ui__field" type="date" name="effective-date">
+		</div><!-- BASIC INFO SECTION -->
+
+		<div class="layout__builder-section">
+			<select id="article-2-type" class="ui__field">
+				<option value="single-contact">Single Point of Contact</option>
+				<option value="multiple-contacts">Multiple Contextual Contacts</option>
+				<option value="client-collaborators">Embedded Client Collaborators</option>
+			</select>
+		</div><!-- ARTICLE OPTIONS -->
+
+		<button id="display-trigger" class="ui__display-trigger ui__field">Let's see it!</button>
+	</div>
+
+	<div class="layout__component-storage">
+		
+		<div id="msa-heading">
+			<h1>Master Service Agreement</h1>
+			<p class="brand__intro">This Agreement the ("Agreement"), effective <span class="date-output"></span> ("Effective Date"), is entered into by and between <span class="client-output"></span> ("Client") having a principal place of business or an address at <span class="client-address-output"></span> and <span class="provider-output"></span> a Colorado Limited Liability Company, having a principal place of business at <span class="provider-address-output"></span> ("Creative").</p>
+		</div><!-- HEADING -->
+
+		<div id="article-1"><!-- ARTICLE ONE -->
+			<h2>Agreement</h2>
+			<p>As used herein and throughout this Agreement:<br>
+			1.1 Agreement means the entire content of this Basic Terms and Conditions document, the Proposal document(s), Schedule A, together with any other Supplements designated below, together with any exhibits, schedules or attachments hereto.</p>
+
+				<!-- need to add a <ul> here for suppliments -->
+
+			<p>1.2 Client Content means all materials, information, factual, promotional, or other advertising claims, photography, writings and other creative content provided by Client for use in the preparation of and/or incorporation in the Deliverables.</p>
+
+			<p>1.3 Copyrights means the property rights in original works of authorship, expressed in a tangible medium of expression, as defined and enforceable under U.S. Copyright Law.</p>
+
+			<p>1.4 Deliverables means the services and work product specified in the Proposal to be delivered by Creative to Client, in the form and media specified in the Proposal.</p>
+		</div><!-- ARTICLE ONE -->
+
+		<div id="article-2"><!-- ARTICLE TWO -->
+			<h2>Point of Contact</h2>
+			<p id="single-contact-copy">2.1 The Client will appoint as a point of contact between its firm and the Creative a single representative authorized to make decisions for all matters pertaining to the Agreement.</p>
+			<p id="multiple-contacts-copy">2.1 [ multiple cotacts copy ] </p>
+			<p id="embedded-collaborator-copy">2.1 [ embedded collaborator copy ] </p>
+		</div><!-- ARTICLE TWO -->
+
+	</div><!-- COMPONENT STORAGE -->
+
+	<div id="display" class="layout__agreement-display hidden">
+		<div id="screen" class="layout__screen"></div>
+			
+		<div class="layout__modal-window">
+			<div id="close-x" class="layout__close-x">
+				<div class="layout__arm layout__arm-1"></div>
+				<div class="layout__arm layout__arm-2"></div>
+			</div>
+				<div id="msa-box" class="layout__msa-box"></div>
+		</div><!-- MODAL WINDOW -->
+	</div>
+
+	<script type="text/javascript">
+		
+		// DISPLAY
+
+			let displayTrigger = document.getElementById("display-trigger");
+			let display = document.getElementById("display");
+			let closeX = document.getElementById("close-x");
+			let screen = document.getElementById("screen");
+
+			displayTrigger.addEventListener("click", function() {
+				selectContent();
+				buildMSA();
+				display.classList.remove("hidden");
+			});
+			closeX.addEventListener("click", function() {
+				display.classList.add("hidden");
+			});
+			screen.addEventListener("click", function() {
+				display.classList.add("hidden");
+			});
+
+
+	</script>
+
+</body>
+</html>

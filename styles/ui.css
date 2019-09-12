@@ -1,0 +1,24 @@
+
+
+
+.ui__field {
+	padding: .2rem;
+	font-size: 1.2rem;
+}
+
+.hidden {
+	display: none;
+}
+
+.ui__display-trigger {
+	display: block;
+	margin-top: 2rem;
+	margin-left: 50%;
+	transform: translateX(-50%);
+	padding: 1rem;
+}
+
+.ui__display-trigger:hover {
+	cursor: pointer;
+	background-color: slategrey;
+}
