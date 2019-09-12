@@ -39,7 +39,7 @@ const selectContent = function () {
 			console.log("error: somehow no article 2.1 was selected");
 		}; 
 
-	
+
 };
 
 const buildMSA = function() {
@@ -64,6 +64,25 @@ const buildMSA = function() {
 		let msaHeading = document.getElementById("msa-heading");
 		let article1 = document.getElementById("article-1");
 		let article2 = document.getElementById("article-2");
+		let article3 = document.getElementById("article-3");
+		let article4 = document.getElementById("article-4");
+		let article5 = document.getElementById("article-5");
+		let article6 = document.getElementById("article-6");
+		let article7 = document.getElementById("article-7");
+		let article8 = document.getElementById("article-8");
+		let article9 = document.getElementById("article-9");
+		let article10 = document.getElementById("article-10");
+		let article11 = document.getElementById("article-11");
+		let article12 = document.getElementById("article-12");
+		let article13 = document.getElementById("article-13");
+		let article14 = document.getElementById("article-14");
+		let article15 = document.getElementById("article-15");
+		let article16 = document.getElementById("article-16");
+		let article17 = document.getElementById("article-17");
+		let article18 = document.getElementById("article-18");
+		let article19 = document.getElementById("article-19");
+		let article20 = document.getElementById("article-20");
+		let article21= document.getElementById("article-21");
 
 
 	for(i=0;i<dateOuts.length;i++) {
@@ -86,8 +105,34 @@ const buildMSA = function() {
 		providerAddressOuts[i].innerText = providerAddress;
 	}
 
-	console.log("yeah, baby!");
+	
 	msaBox.append(msaHeading);
 	msaBox.append(article1);
 	msaBox.append(article2);
+	msaBox.append(article3);
+	msaBox.append(article4);
+	msaBox.append(article5);
+	msaBox.append(article6);
+	msaBox.append(article7);
+	msaBox.append(article8);
+	msaBox.append(article9);
+	msaBox.append(article10);
+	msaBox.append(article11);
+	msaBox.append(article12);
+	msaBox.append(article13);
+	msaBox.append(article14);
+	msaBox.append(article15);
+	msaBox.append(article16);
+	msaBox.append(article17);
+	msaBox.append(article18);
+	msaBox.append(article19);
+	msaBox.append(article20);
+	msaBox.append(article21);
+	console.log("yeah, baby!");
 };
+
+
+
+
+
+

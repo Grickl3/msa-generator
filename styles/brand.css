@@ -5,9 +5,11 @@
 }
 
 h2 {
+	margin: 2rem 0 .25rem 0;
 	font-weight: 500;
 }
 
 p {
+	margin: .0rem 0 1.5rem 0;
 	font-weight: 200;
 }
