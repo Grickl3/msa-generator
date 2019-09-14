@@ -12,7 +12,7 @@
 
 const selectContent = function () {
 
-	// ARTICLE TWO
+	// ARTICLE TWO INPUT LAYOUT
 
 		let singleContact = document.getElementById("single-contact-copy");
 		let multipleContacts = document.getElementById("multiple-contacts-copy");
@@ -43,6 +43,98 @@ const selectContent = function () {
 			console.log("error: somehow no article 2.1 was selected");
 		}; 
 };
+
+	// ARTICLE TWO OUTPUT
+
+		const addContacts = function() {
+
+			// CONTACT ONE
+				let contactOneNameIn = document.getElementById("contact-one").value;
+				let contactOneResponsibility = document.getElementById("responsibility-one").value;
+				let contactOneNameOut = document.getElementById("contact-one-name-out");
+				let contactOneResponsibilityOut = document.getElementById("contact-one-responsibility-out");
+
+				contactOneNameOut.innerText = contactOneNameIn;
+				contactOneResponsibilityOut.innerText = contactOneResponsibility;
+
+			// CONTACT TWO
+				let contactTwoNameIn = document.getElementById("contact-two").value;
+				let contactTwoResponsibility = document.getElementById("responsibility-two").value;
+				let contactTwoNameOut = document.getElementById("contact-two-name-out");
+				let contactTwoResponsibilityOut = document.getElementById("contact-two-responsibility-out");
+
+				contactTwoNameOut.innerText = contactTwoNameIn;
+				contactTwoResponsibilityOut.innerText = contactTwoResponsibility;
+
+			// CONTACT THREE
+				let contactThreeNameIn = document.getElementById("contact-three").value;
+				let contactThreeResponsibility = document.getElementById("responsibility-three").value;
+				let contactThreeNameOut = document.getElementById("contact-three-name-out");
+				let contactThreeResponsibilityOut = document.getElementById("contact-three-responsibility-out");
+
+				contactThreeNameOut.innerText = contactThreeNameIn;
+				contactThreeResponsibilityOut.innerText = contactThreeResponsibility;
+
+			// CONTACT FOUR
+				let contactFourNameIn = document.getElementById("contact-four").value;
+				let contactFourResponsibility = document.getElementById("responsibility-four").value;
+				let contactFourNameOut = document.getElementById("contact-four-name-out");
+				let contactFourResponsibilityOut = document.getElementById("contact-four-responsibility-out");
+
+				contactFourNameOut.innerText = contactFourNameIn;
+				contactFourResponsibilityOut.innerText = contactFourResponsibility;
+
+			// CONTACT FIVE
+				let contactFiveNameIn = document.getElementById("contact-five").value;
+				let contactFiveResponsibility = document.getElementById("responsibility-five").value;
+				let contactFiveNameOut = document.getElementById("contact-five-name-out");
+				let contactFiveResponsibilityOut = document.getElementById("contact-five-responsibility-out");
+
+				contactFiveNameOut.innerText = contactFiveNameIn;
+				contactFiveResponsibilityOut.innerText = contactFiveResponsibility;
+		}
+
+	// ARTICLE FOUR
+
+		const determineEquity = function() {
+			let equity = document.getElementById("equity-checkbox").checked;
+			let nonPartnershipCopy = document.getElementById("non-partnership-copy");
+			let equityCopy = document.getElementById("equity-copy");
+			
+			if (equity === true) {
+				nonPartnershipCopy.classList.add("hidden");
+				equityCopy.classList.remove("hidden");
+			} else {
+				nonPartnershipCopy.classList.remove("hidden");
+				equityCopy.classList.add("hidden");
+			}
+			// console.log(equity);
+		}
+
+	// ARTICLE FIVE 
+
+		const setPrivacy = function() {
+			let privacy = document.getElementById("privacy-checkbox").checked;
+
+			let rightToDisplay = document.getElementById("right-to-display-copy");
+			let rightToReference = document.getElementById("right-to-reference-copy");
+			let rightToUse = document.getElementById("right-to-use-copy");
+			let private = document.getElementById("confidential-deliverables-copy");
+
+			if (privacy === true) {
+				rightToDisplay.classList.add("hidden");
+				rightToReference.classList.add("hidden");
+				rightToUse.classList.add("hidden");
+				private.classList.remove("hidden");
+			} else {
+				rightToDisplay.classList.remove("hidden");
+				rightToReference.classList.remove("hidden");
+				rightToUse.classList.remove("hidden");
+				private.classList.add("hidden");
+			}
+
+			// console.log(privacy);
+		};
 
 const buildMSA = function() {
 	
@@ -110,9 +202,12 @@ const buildMSA = function() {
 	
 	msaBox.append(msaHeading);
 	msaBox.append(article1);
+	addContacts();
 	msaBox.append(article2);
 	msaBox.append(article3);
+	determineEquity();
 	msaBox.append(article4);
+	setPrivacy();
 	msaBox.append(article5);
 	msaBox.append(article6);
 	msaBox.append(article7);
@@ -130,6 +225,7 @@ const buildMSA = function() {
 	msaBox.append(article19);
 	msaBox.append(article20);
 	msaBox.append(article21);
+
 	console.log("yeah, baby!");
 };
 
@@ -143,19 +239,22 @@ const buildMSA = function() {
 
 		let article2p1Selection = document.getElementById("article-2-type").value;
 		let contactNames = document.querySelectorAll(".contact-name-in");
+		let contactList = document.getElementById("contact-list");
 
 		console.log(article2p1Selection);
 
 		if (article2p1Selection === "multiple-contacts" || "client-collaborators") {
 			contactsInput.classList.remove("hidden");
 
+			contactList.classList.remove("hidden");
 			for(i=0; i<contactNames.length; i++) {
 				contactNames[i].placeholder = "Contact";
 			}
-		} 
+		}; 
 
 		if (article2p1Selection === "client-collaborators") {
 			
+			contactList.classList.remove("hidden");
 			for(i=0; i<contactNames.length; i++) {
 				contactNames[i].placeholder = "Collaborator";
 			}
@@ -163,6 +262,7 @@ const buildMSA = function() {
 
 		if (article2p1Selection === "single-contact") {
 			contactsInput.classList.add("hidden");
+			contactList.classList.add("hidden");
 		}
 	};
 
