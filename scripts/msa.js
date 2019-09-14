@@ -24,7 +24,7 @@ const selectContent = function () {
 		if (article2p1Selection === "single-contact") {
 			singleContact.classList.remove("hidden");
 			multipleContacts.classList.add("hidden");
-			contacts.classList.add("hidden");
+			contactsInput.classList.add("hidden");
 			embeddedCollaborator.classList.add("hidden");
 			// console.log(singleContact);
 		} else if (article2p1Selection === "multiple-contacts") {
@@ -36,7 +36,7 @@ const selectContent = function () {
 		} else if (article2p1Selection === "client-collaborators") {
 			singleContact.classList.add("hidden");
 			multipleContacts.classList.add("hidden");
-			contacts.classList.add("hidden");
+			contactsInput.classList.add("hidden");
 			embeddedCollaborator.classList.remove("hidden");
 			// console.log("embedded collaborator");
 		} else {
