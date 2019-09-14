@@ -19,7 +19,7 @@ const selectContent = function () {
 		let embeddedCollaborator = document.getElementById("embedded-collaborator-copy");
 
 		let article2p1Selection = document.getElementById("article-2-type").value;
-		let contacts = document.getElementById("contacts");
+		let contactsInput = document.getElementById("contacts-input");
 
 		if (article2p1Selection === "single-contact") {
 			singleContact.classList.remove("hidden");
@@ -30,7 +30,7 @@ const selectContent = function () {
 		} else if (article2p1Selection === "multiple-contacts") {
 			singleContact.classList.add("hidden");
 			multipleContacts.classList.remove("hidden");
-			contacts.classList.remove("hidden");
+			contactsInput.classList.remove("hidden");
 			embeddedCollaborator.classList.add("hidden");
 			// console.log("multiple contacts");
 		} else if (article2p1Selection === "client-collaborators") {
