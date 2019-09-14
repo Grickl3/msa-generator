@@ -19,27 +19,29 @@ const selectContent = function () {
 		let embeddedCollaborator = document.getElementById("embedded-collaborator-copy");
 
 		let article2p1Selection = document.getElementById("article-2-type").value;
+		let contacts = document.getElementById("contacts");
 
 		if (article2p1Selection === "single-contact") {
 			singleContact.classList.remove("hidden");
 			multipleContacts.classList.add("hidden");
+			contacts.classList.add("hidden");
 			embeddedCollaborator.classList.add("hidden");
 			// console.log(singleContact);
 		} else if (article2p1Selection === "multiple-contacts") {
 			singleContact.classList.add("hidden");
 			multipleContacts.classList.remove("hidden");
+			contacts.classList.remove("hidden");
 			embeddedCollaborator.classList.add("hidden");
 			// console.log("multiple contacts");
 		} else if (article2p1Selection === "client-collaborators") {
 			singleContact.classList.add("hidden");
 			multipleContacts.classList.add("hidden");
+			contacts.classList.add("hidden");
 			embeddedCollaborator.classList.remove("hidden");
 			// console.log("embedded collaborator");
 		} else {
 			console.log("error: somehow no article 2.1 was selected");
 		}; 
-
-
 };
 
 const buildMSA = function() {
@@ -131,6 +133,38 @@ const buildMSA = function() {
 	console.log("yeah, baby!");
 };
 
+// CONTACT LIST FORM ADDITION
+
+	// const collaboratorPlaceholder = function(element) {
+	// 	element.placeholder = "Collaborator";
+	// };
+
+	const contactList = function() {
+
+		let article2p1Selection = document.getElementById("article-2-type").value;
+		let contactNames = document.querySelectorAll(".contact-name-in");
+
+		console.log(article2p1Selection);
+
+		if (article2p1Selection === "multiple-contacts" || "client-collaborators") {
+			contactsInput.classList.remove("hidden");
+
+			for(i=0; i<contactNames.length; i++) {
+				contactNames[i].placeholder = "Contact";
+			}
+		} 
+
+		if (article2p1Selection === "client-collaborators") {
+			
+			for(i=0; i<contactNames.length; i++) {
+				contactNames[i].placeholder = "Collaborator";
+			}
+		}
+
+		if (article2p1Selection === "single-contact") {
+			contactsInput.classList.add("hidden");
+		}
+	};
 
 
 
