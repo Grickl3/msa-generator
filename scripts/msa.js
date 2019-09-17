@@ -217,14 +217,6 @@ const buildMSA = function() {
 	msaBox.append(article11);
 	msaBox.append(article12);
 	msaBox.append(article13);
-	msaBox.append(article14);
-	msaBox.append(article15);
-	msaBox.append(article16);
-	msaBox.append(article17);
-	msaBox.append(article18);
-	msaBox.append(article19);
-	msaBox.append(article20);
-	msaBox.append(article21);
 
 	console.log("yeah, baby!");
 };
